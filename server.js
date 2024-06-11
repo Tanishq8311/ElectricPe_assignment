@@ -5,9 +5,9 @@ const bookingsRoutes = require('./routes/bookingsRoutes');
 const chargingSessionsRoutes = require('./routes/chargingSessionsRoutes');
 
 app.use(express.json()); // For parsing application/json
-app.use('api/charging-stations', chargingStationsRoutes);
-app.use('api/bookings', bookingsRoutes);
-app.use('api/charging-sessions', chargingSessionsRoutes);
+app.use('/charging-stations', chargingStationsRoutes);
+app.use('/bookings', bookingsRoutes);
+app.use('/charging-sessions', chargingSessionsRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
