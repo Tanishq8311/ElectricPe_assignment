@@ -59,9 +59,13 @@ Request Body:
 Response:
 
 201 Created: Slot booked successfully.
+
 409 Conflict: Slot is already booked.
+
 404 Not Found: Charging station not found.
+
 400 Bad Request: Missing required fields.
+
 Start a Charging Session
 Endpoint: POST /charging-sessions/start
 
