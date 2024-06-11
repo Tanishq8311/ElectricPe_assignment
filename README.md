@@ -1,41 +1,33 @@
-EV Charging API
+# EV Charging API
+
 This is an Express.js server that provides an API for managing electric vehicle (EV) charging stations, booking slots, and handling charging sessions. The project is structured in an MVC format and uses hardcoded data for simplicity.
 
-Project Structure
-Copy code
+## Project Structure
+
 my-ev-charging-api/
 ├── controllers/
-│   ├── chargingStationsController.js
-│   ├── bookingsController.js
-│   └── chargingSessionsController.js
+│ ├── chargingStationsController.js
+│ ├── bookingsController.js
+│ └── chargingSessionsController.js
 ├── models/
-│   ├── chargingStations.js
-│   ├── bookings.js
-│   └── chargingSessions.js
+│ ├── chargingStations.js
+│ ├── bookings.js
+│ └── chargingSessions.js
 ├── routes/
-│   ├── chargingStationsRoutes.js
-│   ├── bookingsRoutes.js
-│   └── chargingSessionsRoutes.js
+│ ├── chargingStationsRoutes.js
+│ ├── bookingsRoutes.js
+│ └── chargingSessionsRoutes.js
 └── app.js
 
-Setup
-Initialize a new npm project if you haven't already:
 
-sh
-Copy code
-npm init -y
-Install Express:
+## Setup
 
-sh
-Copy code
+1. Initialize a new npm project if you haven't already:
+   ```sh
+   npm init -y
 npm install express
-Create the folder structure and files as shown above.
+node server.js
 
-Run the server:
-
-sh
-Copy code
-node app.js
 API Endpoints
 Get Nearby Charging Stations
 Endpoint: GET /charging-stations/nearby
@@ -49,13 +41,7 @@ longitude (required): Longitude of the current location.
 radius (optional): Radius in kilometers to search for charging stations. Default is 10 km.
 Example Request:
 
-bash
-Copy code
 GET /charging-stations/nearby?latitude=40.712776&longitude=-74.005974&radius=10
-Response:
-
-json
-Copy code
 [
   { "id": 1, "name": "Station 1", "latitude": 40.712776, "longitude": -74.005974 },
   { "id": 2, "name": "Station 2", "latitude": 34.052235, "longitude": -118.243683 }
@@ -66,9 +52,6 @@ Endpoint: POST /bookings/book
 Description: Books a charging slot for a specific station and time.
 
 Request Body:
-
-json
-Copy code
 {
   "stationId": 1,
   "slot": "2024-06-11T10:00:00"
@@ -85,9 +68,6 @@ Endpoint: POST /charging-sessions/start
 Description: Records the start time of a charging session.
 
 Request Body:
-
-json
-Copy code
 {
   "stationId": 1,
   "userId": 1,
@@ -105,9 +85,6 @@ Endpoint: POST /charging-sessions/end
 Description: Records the end time of a charging session and notifies the user of the payment pending.
 
 Request Body:
-
-json
-Copy code
 {
   "stationId": 1,
   "userId": 1,
@@ -119,3 +96,6 @@ Response:
 200 OK: Charging session ended successfully. Payment is pending.
 404 Not Found: Active charging session not found.
 400 Bad Request: Missing required fields.
+
+
+Thank you very much for giving me this oppurtunity to interview me and understand my capability.
